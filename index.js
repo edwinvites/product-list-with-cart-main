@@ -3,7 +3,7 @@ function conectarConBotonAdicionar (idAdicionar, idContabilizador) {
 
     let [botonAdicionar,contabilizador] = [document.getElementById(idAdicionar),document.getElementById(idContabilizador)];
 
-    botonAdicionar.className  += " visually-hidden";
-    contabilizador.className  -= "visually-hidden";
+    botonAdicionar.classList.add("visually-hidden");
+    contabilizador.classList.remove("visually-hidden");
 
 };
