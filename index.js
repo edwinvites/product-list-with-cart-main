@@ -28,6 +28,7 @@ function sacarDelCarro(primerID) {
     document.getElementById(primerID).classList.remove("visually-hidden");
     document.getElementById(primerID).parentNode.childNodes[5].classList.add("visually-hidden");
     document.getElementById("numeroTotalDeProductos").textContent = articulosSeleccionados.cantidadProductos;
+    document.getElementById("spanPrecioTotal").textContent = articulosSeleccionados.precioTotal.toFixed(2);
 
     if (articulosSeleccionados.cantidadProductos == 0) {
 
