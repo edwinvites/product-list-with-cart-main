@@ -18,7 +18,9 @@ $Rose-900: hsl(14, 65%, 9%);
 $font-family-base: RedHat;
 $h1-font-size: 5rem;
 $font-weight-bold: 990;
-
+// $modal-dialog-margin: 0;
+$modal-content-border-width: 0px;
+$modal-content-border-radius: 0;
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
@@ -48,6 +50,14 @@ $theme-colors: (
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
+
+
+// @mixin border-top-radius($radius: $border-radius) {
+//   @if $enable-rounded {
+//     border-top-left-radius: valid-radius($radius);
+//     border-top-right-radius: valid-radius($radius);
+//   }
+// }
 
 // 6. Optionally include any other parts as needed
 
@@ -117,5 +127,17 @@ $theme-colors: (
   min-height: calc(100% - var(--bs-modal-margin) * 2);
 }
 
+.modal-dialog-scrollable {
+  height: 100vh;
+
+  .modal-content {
+    max-height: 90%;
+    overflow: hidden;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
 
  
