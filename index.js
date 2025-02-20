@@ -28,7 +28,7 @@ function buscaIds(id) {
 
 function sacarDelCarro(primerID) {
 
-    let node = document.getElementById(articulos[primerID].segundoId);
+    let node = document.getElementById("articuloCarro"+primerID);
     node.parentNode.removeChild(node);
     articulosSeleccionados.cantidadProductos -= articulosSeleccionados[primerID].cantidad;
     
@@ -41,7 +41,7 @@ function sacarDelCarro(primerID) {
     document.getElementById("spanPrecioTotal").innerText = articulosSeleccionados.precioTotal.toFixed(2);
     htmlTotalPrecioModal.innerText = articulosSeleccionados.precioTotal.toFixed(2);
 
-    let nodoModal = document.getElementById(articulos[primerID].tercerId);
+    let nodoModal = document.getElementById("articuloEnElModal"+ primerID);
     nodoModal.parentNode.removeChild(nodoModal);
 
     
@@ -58,23 +58,23 @@ function generadorDeHtml(primerID) {
 
     let nodo = document.createElement("div");
     nodo.classList.add("row", "border-bottom", "pb-3", "pt-3");
-    nodo.setAttribute("id", articulos[primerID].segundoId);
+    nodo.setAttribute("id", "articuloCarro" + primerID);
 
     const plantilla = `
-    <div class="col-9 p-0">
-    <p class="mb-2 fw-bold">${articulos[primerID].nombre}</p>
-    <p class="m-0"><span class="text-danger fw-bolder" id="cantidadArticuloEnElCarrio${primerID}">${articulosSeleccionados[primerID].cantidad}</span><span class="text-danger fw-bolder">x</span> &nbsp; &nbsp;
-    <span class="text-Rose-400">@ $</span><span class="text-Rose-400">${articulos[primerID].precio.toFixed(2)}</span>
+        <div class="col-9 p-0">
+            <p class="mb-2 fw-bold">${articulos[primerID].nombre}</p>
+            <p class="m-0"><span class="text-danger fw-bolder" id="cantidadArticuloEnElCarrio${primerID}">${articulosSeleccionados[primerID].cantidad}</span><span class="text-danger fw-bolder">x</span> &nbsp; &nbsp;
+            <span class="text-Rose-400">@ $</span><span class="text-Rose-400">${articulos[primerID].precio.toFixed(2)}</span>
 
-    &nbsp;&nbsp;
-    <span class="text-Rose-500 fw-bolder">$</span>
-    <span class="text-Rose-500 fw-bolder" id="${primerID}PrecioTotalXArticulo" >${(articulos[primerID].precio * articulosSeleccionados[primerID].cantidad).toFixed(2)}</span></p>
-    </div>
-    <div class="col-3 align-self-center p-0" >
-    <div class="d-flex justify-content-end ps-3 py-3" onclick="sacarDelCarro('${primerID}')">
-    <img src="/aseets/icon-remove-item.svg" class="p-1 border  border-secondary border-2 rounded-circle" alt="">
-    </div>
-    </div>
+            &nbsp;&nbsp;
+            <span class="text-Rose-500 fw-bolder">$</span>
+            <span class="text-Rose-500 fw-bolder" id="${primerID}PrecioTotalXArticulo" >${(articulos[primerID].precio * articulosSeleccionados[primerID].cantidad).toFixed(2)}</span></p>
+            </div>
+            <div class="col-3 align-self-center p-0" >
+            <div class="d-flex justify-content-end ps-3 py-3" onclick="sacarDelCarro('${primerID}')">
+            <img src="/aseets/icon-remove-item.svg" class="p-1 border  border-secondary border-2 rounded-circle" alt="">
+            </div>
+        </div>
     `;
 
     nodo.innerHTML = plantilla;
@@ -86,7 +86,7 @@ function generadorDeHtml(primerID) {
 function htmlArticulosEnElModal(primerID) {
     let nodo = document.createElement("div");
     nodo.classList.add("row", "w-100", "border-bottom", "m-0", "pt-3", "pb-3");
-    nodo.setAttribute("id", articulos[primerID].tercerId);
+    nodo.setAttribute("id", "articuloEnElModal" + primerID);
 
     const plantilla =
         `
@@ -109,7 +109,7 @@ function htmlArticulosEnElModal(primerID) {
                                 </div>
                                 <div class="col-2 m-0 p-0 ">
                                     <div class="d-flex h-100 align-items-center justify-content-center">
-                                        <p class="m-0" id="totalPrecioArticuloModal${articulos[primerID].tercerId}">$${(articulos[primerID].precio * articulosSeleccionados[primerID].cantidad).toFixed(2)}</p>
+                                        <p class="m-0" id="totalPrecioArticuloModal${primerID}">$${(articulos[primerID].precio * articulosSeleccionados[primerID].cantidad).toFixed(2)}</p>
                                     </div>
                                 </div>
                         
@@ -160,9 +160,9 @@ function agregarProductosAlCarro(primerID) {
     htmlNadaSeleccionado.classList.add("visually-hidden");
     htmlarticulosSeleccionados.classList.remove("visually-hidden");
 
-    if (buscaIds(articulos[primerID].segundoId)) {
+    if (buscaIds("articuloCarro"+primerID)) {
 
-        let htmlDelArticuloEnElCarro = document.getElementById(articulos[primerID].segundoId);
+        let htmlDelArticuloEnElCarro = document.getElementById("articuloCarro"+primerID);
         let parentNode = htmlDelArticuloEnElCarro.parentNode;
         parentNode.replaceChild(generadorDeHtml(primerID), htmlDelArticuloEnElCarro);
 
@@ -178,8 +178,8 @@ function agregarProductosAlCarro(primerID) {
     }
 
 
-    if (buscaIds(articulos[primerID].tercerId)) {
-        let htmlDelArticuloEnElModal = document.getElementById(articulos[primerID].tercerId);
+    if (buscaIds("articuloEnElModal" + primerID)) {
+        let htmlDelArticuloEnElModal = document.getElementById("articuloEnElModal"+primerID);
         let parentNode = htmlDelArticuloEnElModal.parentNode;
         parentNode.replaceChild(htmlArticulosEnElModal(primerID), htmlDelArticuloEnElModal);
 
@@ -203,7 +203,7 @@ function incrementarCantidades(primerID, idSpanCantidad) {
     document.getElementById(primerID+"PrecioTotalXArticulo").innerText = (articulosSeleccionados[primerID].cantidad*articulos[primerID].precio).toFixed(2);
     document.getElementById("cantidadArticuloEnElCarrio"+primerID).innerText = articulosSeleccionados[primerID].cantidad;
     document.getElementById("cantidadDelArticuloEnElModal."+primerID).innerText = articulosSeleccionados[primerID].cantidad;
-    document.getElementById("totalPrecioArticuloModal"+articulos[primerID].tercerId).innerText = (articulosSeleccionados[primerID].cantidad*articulos[primerID].precio).toFixed(2);
+    document.getElementById("totalPrecioArticuloModal"+primerID).innerText = (articulosSeleccionados[primerID].cantidad*articulos[primerID].precio).toFixed(2);
     htmlTotalPrecioModal.innerText = articulosSeleccionados.precioTotal.toFixed(2);
     htmlSpanPrecioTotal.innerText = (articulosSeleccionados.precioTotal).toFixed(2);
 
@@ -215,9 +215,9 @@ function incrementarCantidades(primerID, idSpanCantidad) {
 function decrementarProductos(primerID, idLabelCantidad) {
 
     let htmlTotalPorArticulo = document.getElementById(primerID + "PrecioTotalXArticulo");
-    let htmlDelArticuloEnElCarro = document.getElementById(articulos[primerID].segundoId);
-    let htmlDelArticuloEnElModal = document.getElementById(articulos[primerID].tercerId)
-    let htmlDelTotalPrecioPorArticuloEnElModal = document.getElementById("totalPrecioArticuloModal"+articulos[primerID].tercerId);
+    let htmlDelArticuloEnElCarro = document.getElementById("articuloCarro"+primerID);
+    let htmlDelArticuloEnElModal = document.getElementById("articuloEnElModal"+primerID)
+    let htmlDelTotalPrecioPorArticuloEnElModal = document.getElementById("totalPrecioArticuloModal"+primerID);
 
 
     if (Object.hasOwn(articulosSeleccionados, primerID)) {
@@ -287,74 +287,66 @@ function reset() {
 
 const articulos = {
 
-    waffle: {
-        precio: 6.50, nombre: "Waffle with Berries", 
-        segundoId: "waffleCarro", tercerId: "waffleModal" ,
-        urlThumbnail: "/aseets/image-waffle-thumbnail.jpg"
+    waffle: 
+    {
+    precio: 6.50, 
+    nombre: "Waffle with Berries",
+    urlThumbnail: "/aseets/image-waffle-thumbnail.jpg"
     },
     
-        vanillaBeanCremeBrulee: 
-        { 
-            precio: 7.00, 
-            nombre: "Vanilla Bean Crème Brûlée", 
-            segundoId: "vanillaBeanCremeBruleeCarro",
-             tercerId: "vanillaBeanCremeBruleeModal",
-                    
-             urlThumbnail: "aseets/image-creme-brulee-thumbnail.jpg"
-            },
+    vanillaBeanCremeBrulee: 
+    { 
+    precio: 7.00, 
+    nombre: "Vanilla Bean Crème Brûlée",
+    urlThumbnail: "aseets/image-creme-brulee-thumbnail.jpg"
+    },
+
     MacaronMixOfFive: 
-    { precio: 8.00, 
-        nombre: "Macaron Mix of Five", 
-        segundoId: "MacaronMixOfFiveCarro", 
-        tercerId: "MacaronMixOfFiveModal" ,
+    { 
+    precio: 8.00, 
+    nombre: "Macaron Mix of Five",
     urlThumbnail: "aseets/image-macaron-thumbnail.jpg"
-},
+    },
+
     classicTiramisu: 
     { 
-        precio: 5.50, 
-        nombre: "Classic Tiramisu", 
-        segundoId: "classicTiramisuCarro", 
-        tercerId: "classicTiramisuModal" ,
-        urlThumbnail: "aseets/image-tiramisu-thumbnail.jpg"
-     },
+    precio: 5.50, 
+    nombre: "Classic Tiramisu", 
+    urlThumbnail: "aseets/image-tiramisu-thumbnail.jpg"
+    },
+
     pistachioBaklava: 
     { 
-        precio: 4.00, 
-        nombre: "Vanilla Bean Crème Brûlée", 
-        segundoId: "pistachioBaklavaCarro", 
-        tercerId: "pistachioBaklavaModal",
+    precio: 4.00, 
+    nombre: "Vanilla Bean Crème Brûlée", 
     urlThumbnail:"aseets/image-baklava-thumbnail.jpg" 
-},
+    },
+
     LemonMeringuePie: 
     { 
-        precio: 5.00, 
-        nombre: "Lemon Meringue Pie", 
-        segundoId: "LemonMeringuePieCarro", 
-        tercerId: "LemonMeringuePieModal",
+    precio: 5.00, 
+    nombre: "Lemon Meringue Pie", 
     urlThumbnail:"aseets/image-meringue-thumbnail.jpg" 
-},
+    },
+
     RedVelveCake: 
     { 
-        precio: 4.50, 
-        nombre: "Red Velve Cake", 
-        segundoId: "RedVelveCakeCarro", 
-        tercerId: "RedVelveCakeModal",
-        urlThumbnail: "aseets/image-cake-thumbnail.jpg" 
+    precio: 4.50, 
+    nombre: "Red Velve Cake", 
+    urlThumbnail: "aseets/image-cake-thumbnail.jpg" 
     },
+
     SaltedCaramelBrownie: 
     { 
-        precio: 5.50, 
-        nombre: "Salted Caramel Brownie",
-         segundoId: "SaltedCaramelBrownieCarro", 
-         tercerId: "SaltedCaramelBrownieModal",
-        urlThumbnail: "aseets/image-brownie-thumbnail.jpg" 
+    precio: 5.50, 
+    nombre: "Salted Caramel Brownie",
+    urlThumbnail: "aseets/image-brownie-thumbnail.jpg" 
     },
+    
     VanillaPannaCotta: 
     { 
-        precio: 6.50, 
-        nombre: "Vanilla Panna Cotta", 
-        segundoId: "VanillaPannaCottaCarro", 
-        tercerId: "VanillaPannaCottaModal",
+    precio: 6.50, 
+    nombre: "Vanilla Panna Cotta", 
     urlThumbnail: "aseets/image-panna-cotta-thumbnail.jpg" 
 },
 
