@@ -6,6 +6,19 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+
+@font-face {
+  font-family: 'RedHat';
+  src: url('/aseets/fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype') ;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'RedHat';
+  src: url('/aseets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype') ;
+  font-style: normal;
+  font-weight: normal;
+}
+
 $red: hsl(14, 86%, 42%);
 $green: hsl(159, 69%, 38%);
 $Rose-50: hsl(20, 50%, 98%);
@@ -16,11 +29,12 @@ $Rose-500: hsl(12, 20%, 44%);
 $Rose-900: hsl(14, 65%, 9%);
 
 $font-family-base: RedHat;
-$h1-font-size: 5rem;
 $font-weight-bold: 990;
 // $modal-dialog-margin: 0;
 $modal-content-border-width: 0px;
 $modal-content-border-radius: 0;
+$font-size-base: 0.8rem;
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
@@ -45,6 +59,15 @@ $theme-colors: (
   "ocre" : hsl(30, 71%, 47%),
 );
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 400px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
 
 // 5. Include remainder of required parts
 @import "../node_modules/bootstrap/scss/maps";
@@ -67,9 +90,23 @@ $theme-colors: (
 @import "../node_modules/bootstrap/scss/modal";
 @import "../node_modules/bootstrap/scss/utilities";
 
+$utilities: map-merge(
+  $utilities, (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      ( responsive: true ),
+    ),
+  )
+);
 
-
-
+// $utilities: map-merge(
+//   $utilities, (
+//     "font-size": map-merge(
+//       map-get($utilities, "font-size"),
+//       ( responsive: true ),
+//     ),
+//   )
+// );
 
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
@@ -85,17 +122,6 @@ $theme-colors: (
 
 // 8. Add additional custom code here
 
-@font-face {
-  font-family: 'RedHat';
-  src: url('/aseets/fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype') ;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'RedHat';
-  src: url('/aseets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype') ;
-  font-style: normal;
-  font-weight: normal;
-}
 
 
 // @font-face {
@@ -140,4 +166,12 @@ $theme-colors: (
   }
 }
 
+
+@include media-breakpoint-down(sm) {
+  .imagenes-para-telefonos {
+    display: none;
+  }
+}
+
+// @include media-breakpoint-only(md) { ... }
  

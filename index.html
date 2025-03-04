@@ -10,160 +10,187 @@
 </head>
 
 <body class="bg-Rose-100 ">
-    <h1 class="py-4 px-4 fw-bold m-0">Desserts</h1>
     <div class="container px-4">
+        <h1 class="py-4 py-md-5 display-1 fw-bold m-0">Desserts</h1>
         <div class="">
-            <img src="/aseets/image-waffle-mobile.jpg" alt="" class="w-100 rounded " id="imageWaffle">
-            <div class="bg-Rose-50 position-relative">
+            <div class="rounded" id="waffleImagen">
+                <img src="/aseets/image-waffle-mobile.jpg" alt="" class="w-100  rounded d-sm-none" >
+                <img src="/aseets/image-waffle-tablet.jpg" alt="" class="w-100 rounded imagenes-para-telefonos ">
+            </div>
+            <div class="bg-Rose-50 position-relative mb-3">
 
-                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center p-1 "
-                    id="waffle"
-                    onclick="botonesAdicionar('waffle','contabilizadorWaffles','imageWaffle','cantidadDeWaffles')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4 ">
-                    <p class="d-inline pe-4 m-0 text-nowrap ">Add to Car</p>
+                <!-- //////////////////////////////////////////////// adicionar producto ////////////////////////////////////////////////////// -->
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4 "
+                    id="waffleBotonAdicionar"
+                    onclick="botonesAdicionar('waffle','waffleBotonContabilizador','waffleImagen','waffleEtiquetaCantidad')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2 ">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap ">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!--//////////////////////// contabilizador del producto /////////////////////////////////-->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   w-50 d-flex justify-content-between align-items-center visually-hidden"
-                    id="contabilizadorWaffles">
-                    <div class="p-3 pe-4 d-flex justify-content-center"
-                        onclick="decrementarProductos('waffle','cantidadDeWaffles')">
-                        <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border  "
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  d-flex justify-content-between align-items-center d-none"
+                    id="waffleBotonDisminuirOAdicionar">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center"
+                        onclick="decrementarProductos('waffle')">
+                        <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle px-1 py-2  border  "
                             id="decrementosWafles">
                     </div>
-                    <p class=" px-1 py-0 m-0  text-center fs-8 text-white" id="cantidadDeWaffles">1</p>
-                    <div class="p-3 ps-4 d-flex justify-content-center"
-                        onclick="incrementarCantidades('waffle','cantidadDeWaffles')">
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="waffleEtiquetaCantidad">1</p>
+                    <div class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center"
+                        onclick="incrementarCantidades('waffle')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1  border "
                             id="incrementadorWafles">
 
                     </div>
                 </div>
 
-                <!-- ------- -->
-
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+                
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400 ">Wafle</p>
-            <p class="m-0 fw-bolder fs-6 text-Rose-900">Wafle with Barries</p>
-            <p class="fw-bold fs-6 text-ocre">$6.50</p>
+
+            <p class="pt-4 mb-0  mt-md-5 fs-6 fs-md-3 text-Rose-400 ">Wafle</p>
+            <p class="m-0 fw-bolder fs-5 fs-md-2 text-Rose-900">Wafle with Barries</p>
+            <p class="fw-bold fs-5 fs-md-2 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$6.50</p>
         </div>
+
+        <!-- //////////////////////////////////////////////////// creme-brule /////////////////////////////// -->
+
         <div class="pt-2">
-            <img src="/aseets/image-creme-brulee-mobile.jpg" alt="" class="w-100 rounded " id="imageCremeBruleeMobile">
-            <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="vanillaBeanCremeBrulee"
-                    onclick="botonesAdicionar('vanillaBeanCremeBrulee','contabilizadorCreme','imageCremeBruleeMobile','cantidadDeCremeBrulee')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+            <div class="" id="vanillaBeanCremeBruleeImagen">
+                <img src="/aseets/image-creme-brulee-mobile.jpg" alt="" class="w-100 rounded " >
+            </div>
+            <div class="bg-Rose-50 position-relative mb-3">
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4  "
+                    id="vanillaBeanCremeBruleeBotonAdicionar"
+                    onclick="botonesAdicionar('vanillaBeanCremeBrulee')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2 ">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!--/////////////////  contabilizador del producto //////////////////77-->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorCreme">
-                    <div class="p-3 pe-4 d-flex justify-content-center"
-                        onclick="decrementarProductos('vanillaBeanCremeBrulee','cantidadDeCremeBrulee')">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   d-flex justify-content-between align-items-center  d-none"
+                    id="vanillaBeanCremeBruleeBotonDisminuirOAdicionar">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center"
+                        onclick="decrementarProductos('vanillaBeanCremeBrulee')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border">
                     </div>
-                    <p class="  px-1 py-0 m-0  text-center fs-8 text-white" id="cantidadDeCremeBrulee">5</p>
-                    <div class="p-3 ps-4 d-flex justify-content-center"
-                        onclick="incrementarCantidades('vanillaBeanCremeBrulee','cantidadDeCremeBrulee')">
+                    <p class="  px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="vanillaBeanCremeBruleeEtiquetaCantidad">5</p>
+                    <div class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center"
+                        onclick="incrementarCantidades('vanillaBeanCremeBrulee')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1  border ">
 
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- //////////////////////////////////////////////////////////////7 -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Crème Brûlée</p>
-            <p class="m-0 fw-bolder fs-6">Vanilla Bean Crème Brûlée </p>
-            <p class="fw-bold fs-6 text-ocre">$7.00</p>
+            <p class="pt-4 mb-0  mt-md-5 fs-6 fs-md-3 text-Rose-400 ">Crème Brûlée</p>
+            <p class="m-0 fw-bolder fs-5 fs-md-2 text-Rose-900">Vanilla Bean Crème Brûlée </p>
+            <p class="fw-bold fs-5 fs-md-2 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$7.00</p>
         </div>
+
+
+        <!-- //////////////////////////////////////////////// macaron /////////////////////////////////////////////////////////////////////////////// -->
         <div class="pt-2">
-            <img src="/aseets/image-macaron-mobile.jpg" alt="" class="w-100 rounded" id="imageMacaronMobile">
+            <div id="MacaronMixOfFiveImagen">
+                <img src="/aseets/image-macaron-mobile.jpg" alt="" class="w-100 rounded" >
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="MacaronMixOfFive"
-                    onclick="botonesAdicionar('MacaronMixOfFive','contabilizadorMacaron','imageMacaronMobile','labelCantidadMacaron')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4 "
+                    id="MacaronMixOfFiveBotonAdicionar"
+                    onclick="botonesAdicionar('MacaronMixOfFive')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!-- ///////////////////////////////////// contabilizador del producto ////////////////////////////////////////////7 -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorMacaron">
-                    <div class="p-3 pe-4 d-flex justify-content-center"
-                        onclick="decrementarProductos('MacaronMixOfFive','labelCantidadMacaron')">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="MacaronMixOfFiveBotonDisminuirOAdicionar">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center"
+                        onclick="decrementarProductos('MacaronMixOfFive')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border  ">
                     </div>
-                    <p class="   py-0 m-0  text-center fs-8 text-white" id="labelCantidadMacaron">5</p>
-                    <div class="p-3 ps-4 d-flex justify-content-center"
-                        onclick="incrementarCantidades('MacaronMixOfFive','labelCantidadMacaron')">
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="MacaronMixOfFiveEtiquetaCantidad">5</p>
+                    <div class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center"
+                        onclick="incrementarCantidades('MacaronMixOfFive')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border ">
 
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Macaron</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Macaron</p>
             <p class="m-0 fw-bolder fs-6">Macaron Mix of Five</p>
             <p class="fw-bold fs-6 text-ocre">$8.00</p>
         </div>
+
+
+        <!-- ///////////////////////////////////////////////////////////////// Tiramisu //////////////////////////////////////////////// -->
+
         <div class="pt-2">
-            <img src="/aseets/image-tiramisu-mobile.jpg" alt="" class="w-100 rounded" id="imageTiramisu">
+            <div id="classicTiramisuImagen">
+                <img src="/aseets/image-tiramisu-mobile.jpg" alt="" class="w-100 rounded" >
+
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="classicTiramisu"
-                    onclick="botonesAdicionar('classicTiramisu','contabilizadorTiramisu','imageTiramisu','labelTiramisu')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4"
+                    id="classicTiramisuBotonAdicionar"
+                    onclick="botonesAdicionar('classicTiramisu')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!-- //////////////////////////////////////////////////7 contabilizador del producto //////////////////////////////////////////////77 -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorTiramisu">
-                    <div class="p-3 pe-4 d-flex justify-content-center"
-                        onclick="decrementarProductos('classicTiramisu','labelTiramisu')">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="classicTiramisuBotonDisminuirOAdicionar">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center"
+                        onclick="decrementarProductos('classicTiramisu')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border  ">
                     </div>
-                    <p class=" p py-0 m-0  text-center fs-8 text-white" id="labelTiramisu">5</p>
-                    <div class="p-3 ps-4 d-flex justify-content-center"
-                        onclick="incrementarCantidades('classicTiramisu','labelTiramisu')">
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="classicTiramisuEtiquetaCantidad">5</p>
+                    <div class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center"
+                        onclick="incrementarCantidades('classicTiramisu')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border">
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Tiramisu</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Tiramisu</p>
             <p class="m-0 fw-bolder fs-6">Classic Tiramisu</p>
             <p class="fw-bold fs-6 text-ocre">$5.50</p>
         </div>
+
+        <!-- ///////////////////////////////////////////////////////// pistachioBaklava ////////////////////////////////////////////////// -->
         <div class="pt-2">
-            <img src="/aseets/image-baklava-mobile.jpg" alt="" class="w-100 rounded" id="imagenBaklava">
+            <div id="pistachioBaklavaImagen">
+
+                <img src="/aseets/image-baklava-mobile.jpg" alt="" class="w-100 rounded" id="imagenBaklava">
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="pistachioBaklava"
-                    onclick="botonesAdicionar('pistachioBaklava','contabilizadorBaklava','imagenBaklava','numeroDeBaklava')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0 text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4"
+                    id="pistachioBaklavaBotonAdicionar"
+                    onclick="botonesAdicionar('pistachioBaklava')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!-- /////////////////////////////////////////////////// contabilizador del producto //////////////////////////////////////////////// -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorBaklava">
-                    <div class="p-3 pe-4 d-flex justify-content-center" onclick="decrementarProductos('pistachioBaklava','numeroDeBaklava')">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="pistachioBaklavaBotonDisminuirOAdicionar">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center" onclick="decrementarProductos('pistachioBaklava')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border "
                         >
 
                     </div>
-                    <p class="  py-0 m-0  text-center fs-8 text-white" id="numeroDeBaklava">5</p>
-                    <div class="p-3 ps-4 d-flex justify-content-center"  onclick="incrementarCantidades('pistachioBaklava','numeroDeBaklava')">
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="pistachioBaklavaEtiquetaCantidad">5</p>
+                    <div class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center"  onclick="incrementarCantidades('pistachioBaklava')">
 
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border"
                        >
@@ -171,68 +198,80 @@
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Baklava</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Baklava</p>
             <p class="m-0 fw-bolder fs-6">Pistachio Baklava</p>
             <p class="fw-bold fs-6 text-ocre">$4.00</p>
         </div>
+
+
+        <!-- //////////////////////////////////////////////  LemonMeringuePie  ///////////////////////////////////////////// -->
         <div class="pt-2">
-            <img src="/aseets/image-meringue-mobile.jpg" alt="" class="w-100 rounded" id="imagenMeringue">
+            <div id="LemonMeringuePieImagen">
+                <img src="/aseets/image-meringue-mobile.jpg" alt="" class="w-100 rounded" >
+
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="LemonMeringuePie"
-                    onclick="botonesAdicionar('LemonMeringuePie','contabilizadorMeringue','imagenMeringue','labelCantidadMerengue')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4 "
+                    id="LemonMeringuePieBotonAdicionar"
+                    onclick="botonesAdicionar('LemonMeringuePie')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!-- ////////////////////////////////////// contabilizador del producto //////////////////////////////// -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorMeringue">
-                    <div class="p-3 pe-4 d-flex justify-content-center"  onclick="decrementarProductos('LemonMeringuePie','labelCantidadMerengue')">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="LemonMeringuePieBotonDisminuirOAdicionar">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center"  onclick="decrementarProductos('LemonMeringuePie')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border "
                         >
 
                     </div>
-                    <p class=" py-0 m-0  text-center fs-8 text-white" id="labelCantidadMerengue">5</p>
-                    <div class="p-3 ps-4 d-flex justify-content-center" onclick="incrementarCantidades('LemonMeringuePie','labelCantidadMerengue')">
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="LemonMeringuePieEtiquetaCantidad">5</p>
+                    <div class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center" onclick="incrementarCantidades('LemonMeringuePie')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border"
                         >
 
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- /////////////////////////////////////////////////////////////////////////////////////////////77 -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Pie</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Pie</p>
             <p class="m-0 fw-bolder fs-6">Lemon Meringue Pie</p>
             <p class="fw-bold fs-6 text-ocre">$5.00</p>
         </div>
+
+        <!-- ////////////////////////////////////////////////////////////////  RedVelveCake //////////////////////////////////////////////////7 -->
+
         <div class="pt-2">
-            <img src="/aseets/image-cake-mobile.jpg" alt="" class="w-100 rounded" id="imagenCake">
+            <div id="RedVelveCakeImagen">
+                <img src="/aseets/image-cake-mobile.jpg" alt="" class="w-100 rounded" >
+
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="RedVelveCake"
-                    onclick="botonesAdicionar('RedVelveCake','contabilizadorCake','imagenCake','textoCantidadRedVelvetCake')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4"
+                    id="RedVelveCakeBotonAdicionar"
+                    onclick="botonesAdicionar('RedVelveCake')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!--  ///////////////////////////////////////77 contabilizador del producto //////////////////////////////////////////////////////// -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorCake">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="RedVelveCakeBotonDisminuirOAdicionar">
 
-                    <div class="p-3 pe-4 d-flex justify-content-center" onclick="decrementarProductos('RedVelveCake','textoCantidadRedVelvetCake')">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center" onclick="decrementarProductos('RedVelveCake')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border "
                         >
 
                     </div>
-                    <p class=" py-0 m-0  text-center fs-8 text-white" id="textoCantidadRedVelvetCake">5</p>
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="RedVelveCakeEtiquetaCantidad">5</p>
 
-                    <div  class="p-3 ps-4 d-flex justify-content-center" onclick="incrementarCantidades('RedVelveCake','textoCantidadRedVelvetCake')">
+                    <div  class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center" onclick="incrementarCantidades('RedVelveCake')">
 
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border"
                         >
@@ -240,93 +279,106 @@
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Cake</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Cake</p>
             <p class="m-0 fw-bolder fs-6">Red Velvet Cake</p>
             <p class="fw-bold fs-6 text-ocre">$4.50</p>
         </div>
+
+        <!-- //////////////////////////////////////////////////// SaltedCaramelBrownie  ///////////////////////////////////////////////////////7 -->
         <div class="pt-2">
-            <img src="/aseets/image-brownie-mobile.jpg" alt="" class="w-100 rounded" id="imagenBrownie">
+            <div  id="SaltedCaramelBrownieImagen">
+
+                <img src="/aseets/image-brownie-mobile.jpg" alt="" class="w-100 rounded">
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="SaltedCaramelBrownie"
-                    onclick="botonesAdicionar('SaltedCaramelBrownie','contabilizadorBrownie','imagenBrownie','numeroCantidadBrownie')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4"
+                    id="SaltedCaramelBrownieBotonAdicionar"
+                    onclick="botonesAdicionar('SaltedCaramelBrownie','contabilizadorBrownie')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!-- /////////////////////////////////////////////////////7 contabilizador del producto ////////////////////////////////////////////////// -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorBrownie">
-                    <div  class="p-3 pe-4 d-flex justify-content-center" onclick="decrementarProductos('SaltedCaramelBrownie','numeroCantidadBrownie')" >
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="SaltedCaramelBrownieBotonDisminuirOAdicionar">
+                    <div  class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center" onclick="decrementarProductos('SaltedCaramelBrownie')" >
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border "
                         >
 
                     </div>
-                    <p class=" py-0 m-0  text-center fs-8 text-white" id="numeroCantidadBrownie">5</p>
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="SaltedCaramelBrownieEtiquetaCantidad">5</p>
 
-                    <div  class="p-3 ps-4 d-flex justify-content-center" onclick="incrementarCantidades('SaltedCaramelBrownie','numeroCantidadBrownie')">
+                    <div  class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center" onclick="incrementarCantidades('SaltedCaramelBrownie')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border "
                         >
 
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77 -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Brownie</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Brownie</p>
             <p class="m-0 fw-bolder fs-6">Salted Caramel Brownie</p>
             <p class="fw-bold fs-6 text-ocre">$5.50</p>
         </div>
+
+<!-- ////////////////////////////////////////////////////////  VanillaPannaCotta  ///////////////////////////////////////////////////////////// -->
+
         <div class="pt-2">
-            <img src="/aseets/image-panna-cotta-mobile.jpg" alt="" class="w-100 rounded" id="imagenPannaCotta">
+            <div id="VanillaPannaCottaImagen">
+                <img src="/aseets/image-panna-cotta-mobile.jpg" alt="" class="w-100 rounded" >
+
+            </div>
             <div class="bg-Rose-50 position-relative">
-                <div class="position-absolute top-50 start-50 translate-middle bg-Rose-50 border rounded-pill border-Rose-900  d-flex justify-content-between align-items-center p-1"
-                    id="VanillaPannaCotta"
-                    onclick="botonesAdicionar('VanillaPannaCotta','contabilizadorPanna','imagenPannaCotta','numeroCantidadVanillaPannaCotta')">
-                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline pe-2 py-2 ps-4">
-                    <p class="d-inline pe-4  m-0  text-nowrap">Add to Car</p>
+                <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 p-md-4"
+                    id="VanillaPannaCottaBotonAdicionar"
+                    onclick="botonesAdicionar('VanillaPannaCotta')">
+                    <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
+                    <p class="d-inline ps-2 m-0 fs-6 fs-md-2 fw-bold text-nowrap">Add to Car</p>
                 </div>
 
-                <!-- contabilizador del producto -->
+                <!-- /////////////////////////////////////////// contabilizador del producto ////////////////////////////////////////////////////77 -->
 
-                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  visually-hidden"
-                    id="contabilizadorPanna">
+                <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  w-50 d-flex justify-content-between align-items-center  d-none"
+                    id="VanillaPannaCottaBotonDisminuirOAdicionar">
 
-                    <div class="p-3 pe-4 d-flex justify-content-center" onclick="decrementarProductos('VanillaPannaCotta','numeroCantidadVanillaPannaCotta')">
+                    <div class="py-2 ps-3 pe-4 py-md-4 ps-md-4 pe-md-5 d-flex justify-content-center" onclick="decrementarProductos('VanillaPannaCotta')">
                         <img src="/aseets/icon-decrement-quantity.svg" alt="" class="rounded-circle p-1 py-2  border"
                         >
 
                     </div>
-                    <p class=" py-0 m-0  text-center fs-8 text-white" id="numeroCantidadVanillaPannaCotta">5</p>
-                    <div  class="p-3 ps-4 d-flex justify-content-center" class=""  onclick="incrementarCantidades('VanillaPannaCotta','numeroCantidadVanillaPannaCotta')">
+                    <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-1 text-white" id="VanillaPannaCottaEtiquetaCantidad">5</p>
+                    <div  class="py-2 ps-4 pe-3 py-md-4 pe-md-4 ps-md-5 d-flex justify-content-center" class=""  onclick="incrementarCantidades('VanillaPannaCotta')">
                         <img src="/aseets/icon-increment-quantity.svg" alt="" class="rounded-circle  p-1 border "
                         >
 
                     </div>
                 </div>
 
-                <!-- ------- -->
+                <!-- /////////////////////////////////////////////777/////////////////////////////////////////////////////////////////////// -->
             </div>
-            <p class="pt-4 m-0 fs-8 text-Rose-400">Panna</p>
+            <p class="pt-4 m-0 fs-4 text-Rose-400">Panna</p>
             <p class="m-0 fw-bolder fs-6">Vanilla Panna Cotta</p>
             <p class="fw-bold fs-6 text-ocre">$6.50</p>
         </div>
+
+        <!-- ////////////////////////////////////////////////// car ////////////////////////////////////////////////////////7 -->
         <div class="mt-4 bg-Rose-50 rounded mb-3 px-4">
             <p class="fs-3 fw-bolder pt-4  text-danger">Your Cart (<span class="fs-5"
-                    id="numeroTotalDeProductos">0</span>)</p>
-            <div class="d-flex flex-column justify-content-center pb-4 mt-2 visually-hidden" id="carritoConProductos">
+                    id="cantidadDeProductosSeleccionados">0</span>)</p>
+            <div class="d-flex flex-column justify-content-center pb-4 mt-2 d-none" id="carritoConProductos">
                 <div class="container" id="artiuculosModal">
 
                     <div class="row  pb-3 pt-3 mt-3" id="precioTotal">
                         <div class="col-9 m-0 p-0 align-self-center">
-                            <p class="  fs-8 m-0">Order Total</p>
+                            <p class="  fs-6 m-0">Order Total</p>
                         </div>
                         <div class="col-3 align-self-center p-0 m-0">
                             <div class="d-flex justify-content-end">
-                                <p class="m-0 h2 fw-bolder">$<span id="spanPrecioTotal">25.00</span></p>
+                                <p class="m-0 fs-3 fw-bolder">$<span id="spanPrecioDeLaCompra">25.00</span></p>
                             </div>
                         </div>
                     </div>
@@ -334,7 +386,7 @@
                         <div class="col">
                             <div class="d-flex justify-content-center">
                                 <img src="/aseets/icon-carbon-neutral.svg" alt="" class="d-inline px-1">
-                                <p class="m-0 fs-8 d-inline px-1">This is <span class="fw-bolder">carbon-neutral</span>
+                                <p class="m-0 fs-6 d-inline px-1">This is <span class="fw-bolder">carbon-neutral</span>
                                     delivery</p>
 
                             </div>
@@ -352,7 +404,7 @@
             <div class="d-flex flex-column justify-content-center pb-4" id="carritoSinProductos">
                 <img src="/aseets/illustration-empty-cart.svg" alt="" class="w-25 rounded mx-auto"
                     id="imagenDelPastelCortado">
-                <p class="pt-4  fs-8 text-center text-Rose-500 fw-bolder">Your added items will appear here</p>
+                <p class="pt-4  fs-4 text-center text-Rose-500 fw-bolder">Your added items will appear here</p>
             </div>
         </div>
 
@@ -365,14 +417,14 @@
                 <div class="modal-content bg-Rose-50 rounded-top-4">
                     <div class="modal-header flex-column align-items-start  pt-5 px-4">
                         <img src="./aseets/icon-order-confirmed.svg" alt="" class="d-block">
-                        <h1 class="modal-title fw-bolder d-block pt-3" id="exampleModalLabel">Order Confirmed</h1>
-                        <p class="fs-8  text-Rose-500">We hope you enjoy your food!</p>
+                        <h1 class="modal-title fw-bolder display-1 d-block pt-3 text-wrap" id="exampleModalLabel">Order Confirmed</h1>
+                        <p class="fs-4  text-Rose-500">We hope you enjoy your food!</p>
                     </div>
                     <div class="modal-body bg-Rose-100 border-1 border-white mx-4 px-0 py-0 mt-0 rounded" >
 
                         <div class="container px-4 w-100 pt-2" id="articulosConfirmados">
                             
-                            <div class="row w-100 m-0 pt-3 pb-3" id="filaTotalCompraModal">
+                            <div class="row w-100 m-0 pt-3 pb-3" id="etiquetaConTotalDelaCompra">
                                 <div class="col-12">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="m-0 ">Order Total</p>
@@ -388,7 +440,7 @@
                     </div>
                     <div class="modal-footer bg-Rose-50 border-0 px-4 mt-3">
                         <button type="button" class="btn btn-danger rounded-pill w-100 text-white  py-3
-                     fs-8" onclick="reset()">Star New Order</button>
+                     fs-6" onclick="reset()">Star New Order</button>
                     </div>
                 </div>
             </div>

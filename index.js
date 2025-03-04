@@ -1,19 +1,16 @@
-const htmlCantidadProductosSeleccionados = document.getElementById("numeroTotalDeProductos");
-const htmlNadaSeleccionado = document.getElementById("carritoSinProductos");
-const htmlarticulosSeleccionados = document.getElementById("carritoConProductos");
-const htmlPrecioTotal = document.getElementById("precioTotal");
-const htmlParentPrecioTotal = document.getElementById("precioTotal").parentNode;
-const htmlSpanPrecioTotal = document.getElementById("spanPrecioTotal");
-const htmlContainerAriticulosModal = document.getElementById("articulosConfirmados");
-const htmlFilaTotalCompraModal = document.getElementById("filaTotalCompraModal");
-const htmlTotalPrecioModal = document.getElementById("totalCompraModal");
-const htmlBotonModal = document.getElementById("botonDelModal");
+const EtiquetaNumeroDeProductosComprados = document.getElementById("cantidadDeProductosSeleccionados");
+const etiquetaCarroSinProductos = document.getElementById("carritoSinProductos");
+const etiquetaCarroConProductos = document.getElementById("carritoConProductos");
+const etiquetaPrecioDeLaCompra = document.getElementById("precioTotal");
+const etiquetaPadrePrecioDeLaCompra = document.getElementById("precioTotal").parentNode;
+const etiquetaSpanDelPrecioDeLaCompra = document.getElementById("spanPrecioDeLaCompra");
+const etiquetaConTotalDelaCompra = document.getElementById("etiquetaConTotalDelaCompra");
+const etiquetaDelTotalCompra = document.getElementById("totalCompraModal");
 
 const myModal = new bootstrap.Modal(document.getElementById('modalArticulos'));
 // or
 
 
-console.log(htmlContainerAriticulosModal.childNodes);
 
 
 function buscaIds(id) {
@@ -28,28 +25,29 @@ function buscaIds(id) {
 
 function sacarDelCarro(primerID) {
 
-    let node = document.getElementById("articuloCarro"+primerID);
+    let node = document.getElementById(primerID +"etiquetaDelArticuloEnElModal");
     node.parentNode.removeChild(node);
     articulosSeleccionados.cantidadProductos -= articulosSeleccionados[primerID].cantidad;
     
     articulosSeleccionados.precioTotal -= articulosSeleccionados[primerID].total;
     delete articulosSeleccionados[primerID]
-    document.getElementById(primerID).parentNode.parentNode.childNodes[1].classList.remove("border", "border-danger", "border-3");
-    document.getElementById(primerID).classList.remove("visually-hidden");
-    document.getElementById(primerID).parentNode.childNodes[5].classList.add("visually-hidden");
-    document.getElementById("numeroTotalDeProductos").textContent = articulosSeleccionados.cantidadProductos;
-    document.getElementById("spanPrecioTotal").innerText = articulosSeleccionados.precioTotal.toFixed(2);
-    htmlTotalPrecioModal.innerText = articulosSeleccionados.precioTotal.toFixed(2);
+    document.getElementById(primerID+"Imagen").classList.remove("border", "border-danger", "border-3");
+    document.getElementById(primerID+"BotonAdicionar").classList.remove("d-none");
+        
+    document.getElementById(primerID+"BotonDisminuirOAdicionar").classList.add("d-none");
+    document.getElementById("cantidadDeProductosSeleccionados").textContent = articulosSeleccionados.cantidadProductos;
+    document.getElementById("spanPrecioDeLaCompra").innerText = articulosSeleccionados.precioTotal.toFixed(2);
+    etiquetaDelTotalCompra.innerText = articulosSeleccionados.precioTotal.toFixed(2);
 
-    let nodoModal = document.getElementById("articuloEnElModal"+ primerID);
+    let nodoModal = document.getElementById(primerID + "ArticuloEnElModal");
     nodoModal.parentNode.removeChild(nodoModal);
 
     
 
     if (articulosSeleccionados.cantidadProductos == 0) {
 
-        htmlNadaSeleccionado.classList.remove("visually-hidden");
-        htmlarticulosSeleccionados.classList.add("visually-hidden");
+        etiquetaCarroSinProductos.classList.remove("d-none");
+        etiquetaCarroConProductos.classList.add("d-none");
 
     }
 }
@@ -58,7 +56,7 @@ function generadorDeHtml(primerID) {
 
     let nodo = document.createElement("div");
     nodo.classList.add("row", "border-bottom", "pb-3", "pt-3");
-    nodo.setAttribute("id", "articuloCarro" + primerID);
+    nodo.setAttribute("id", primerID + "etiquetaDelArticuloEnElModal" );
 
     const plantilla = `
         <div class="col-9 p-0">
@@ -68,7 +66,7 @@ function generadorDeHtml(primerID) {
 
             &nbsp;&nbsp;
             <span class="text-Rose-500 fw-bolder">$</span>
-            <span class="text-Rose-500 fw-bolder" id="${primerID}PrecioTotalXArticulo" >${(articulos[primerID].precio * articulosSeleccionados[primerID].cantidad).toFixed(2)}</span></p>
+            <span class="text-Rose-500 fw-bolder" id="${primerID}etiquetaPrecioXArticuloEnElCarro" >${(articulos[primerID].precio * articulosSeleccionados[primerID].cantidad).toFixed(2)}</span></p>
             </div>
             <div class="col-3 align-self-center p-0" >
             <div class="d-flex justify-content-end ps-3 py-3" onclick="sacarDelCarro('${primerID}')">
@@ -83,10 +81,10 @@ function generadorDeHtml(primerID) {
 
 }
 
-function htmlArticulosEnElModal(primerID) {
+function ElementoDelArticuloEnElModal(primerID) {
     let nodo = document.createElement("div");
     nodo.classList.add("row", "w-100", "border-bottom", "m-0", "pt-3", "pb-3");
-    nodo.setAttribute("id", "articuloEnElModal" + primerID);
+    nodo.setAttribute("id", primerID + "ArticuloEnElModal" );
 
     const plantilla =
         `
@@ -124,17 +122,17 @@ function htmlArticulosEnElModal(primerID) {
 
 
 
-function botonesAdicionar(idAdicionar, idContabilizador, idimage, idLabelContabilizador) {
+function botonesAdicionar(primerID) {
 
-    let [botonAdicionar, contabilizador, imagen, labelContabilizador] =
-        [document.getElementById(idAdicionar), document.getElementById(idContabilizador),
-        document.getElementById(idimage), document.getElementById(idLabelContabilizador)];
+    let [botonAdicionar, botonDisminuirOAumentar, imagen, etiquetaCantidadProducto] =
+        [document.getElementById(primerID + "BotonAdicionar"), document.getElementById(primerID + "BotonDisminuirOAdicionar"),
+        document.getElementById(primerID + "Imagen"), document.getElementById(primerID + "EtiquetaCantidad")];
 
-    botonAdicionar.classList.add("visually-hidden");
-    contabilizador.classList.remove("visually-hidden");
+    botonAdicionar.classList.add("d-none");
+    botonDisminuirOAumentar.classList.remove("d-none");
     imagen.classList.add("border", "border-danger", "border-3");
-    agregarProductosAlCarro(idAdicionar);
-    labelContabilizador.textContent = articulosSeleccionados[idAdicionar]["cantidad"];
+    agregarProductosAlCarro(primerID);
+    etiquetaCantidadProducto.textContent = articulosSeleccionados[primerID]["cantidad"];
 
 };
 
@@ -156,105 +154,102 @@ function agregarProductosAlCarro(primerID) {
     articulosSeleccionados[primerID]["total"] = (articulosSeleccionados[primerID]["cantidad"] * articulos[primerID].precio);
     articulosSeleccionados["precioTotal"] += articulos[primerID].precio;
     articulosSeleccionados["cantidadProductos"]++;
-    htmlCantidadProductosSeleccionados.textContent = articulosSeleccionados["cantidadProductos"];
-    htmlNadaSeleccionado.classList.add("visually-hidden");
-    htmlarticulosSeleccionados.classList.remove("visually-hidden");
+    EtiquetaNumeroDeProductosComprados.textContent = articulosSeleccionados["cantidadProductos"];
+    etiquetaCarroSinProductos.classList.add("d-none");
+    etiquetaCarroConProductos.classList.remove("d-none");
 
-    if (buscaIds("articuloCarro"+primerID)) {
+    if (buscaIds(primerID + "etiquetaDelArticuloEnElModal")) {
 
-        let htmlDelArticuloEnElCarro = document.getElementById("articuloCarro"+primerID);
+        let htmlDelArticuloEnElCarro = document.getElementById(primerID +"etiquetaDelArticuloEnElModal");
         let parentNode = htmlDelArticuloEnElCarro.parentNode;
         parentNode.replaceChild(generadorDeHtml(primerID), htmlDelArticuloEnElCarro);
 
 
     } else {
 
-        htmlParentPrecioTotal.insertBefore
-            (generadorDeHtml(primerID), htmlPrecioTotal);
+        etiquetaPadrePrecioDeLaCompra.insertBefore
+            (generadorDeHtml(primerID), etiquetaPrecioDeLaCompra);
 
-        // htmlContainerAriticulosModal.childNodes
 
 
     }
 
 
-    if (buscaIds("articuloEnElModal" + primerID)) {
-        let htmlDelArticuloEnElModal = document.getElementById("articuloEnElModal"+primerID);
+    if (buscaIds(primerID + "ArticuloEnElModal")) {
+        let htmlDelArticuloEnElModal = document.getElementById(primerID +"ArticuloEnElModal");
         let parentNode = htmlDelArticuloEnElModal.parentNode;
-        parentNode.replaceChild(htmlArticulosEnElModal(primerID), htmlDelArticuloEnElModal);
+        parentNode.replaceChild(ElementoDelArticuloEnElModal(primerID), htmlDelArticuloEnElModal);
 
     } else {
 
-        htmlFilaTotalCompraModal.parentNode.insertBefore
-            (htmlArticulosEnElModal(primerID), htmlFilaTotalCompraModal);
+        etiquetaConTotalDelaCompra.parentNode.insertBefore
+            (ElementoDelArticuloEnElModal(primerID), etiquetaConTotalDelaCompra);
     }
 
-    htmlSpanPrecioTotal.textContent = articulosSeleccionados.precioTotal.toFixed(2);
-    htmlTotalPrecioModal.textContent = articulosSeleccionados.precioTotal.toFixed(2)
+    etiquetaSpanDelPrecioDeLaCompra.textContent = articulosSeleccionados.precioTotal.toFixed(2);
+    etiquetaDelTotalCompra.textContent = articulosSeleccionados.precioTotal.toFixed(2)
 
 }
 
-function incrementarCantidades(primerID, idSpanCantidad) {
+function incrementarCantidades(primerID) {
     articulosSeleccionados[primerID].cantidad++;
     articulosSeleccionados.cantidadProductos++;
     articulosSeleccionados[primerID].total = articulosSeleccionados[primerID].total + articulos[primerID].precio;
     articulosSeleccionados.precioTotal = articulosSeleccionados.precioTotal + articulos[primerID].precio;
-    document.getElementById(idSpanCantidad).innerText = articulosSeleccionados[primerID].cantidad;
-    document.getElementById(primerID+"PrecioTotalXArticulo").innerText = (articulosSeleccionados[primerID].cantidad*articulos[primerID].precio).toFixed(2);
+    document.getElementById(primerID+"EtiquetaCantidad").innerText = articulosSeleccionados[primerID].cantidad;
+    document.getElementById(primerID+"etiquetaPrecioXArticuloEnElCarro").innerText = (articulosSeleccionados[primerID].cantidad*articulos[primerID].precio).toFixed(2);
     document.getElementById("cantidadArticuloEnElCarrio"+primerID).innerText = articulosSeleccionados[primerID].cantidad;
     document.getElementById("cantidadDelArticuloEnElModal."+primerID).innerText = articulosSeleccionados[primerID].cantidad;
     document.getElementById("totalPrecioArticuloModal"+primerID).innerText = (articulosSeleccionados[primerID].cantidad*articulos[primerID].precio).toFixed(2);
-    htmlTotalPrecioModal.innerText = articulosSeleccionados.precioTotal.toFixed(2);
-    htmlSpanPrecioTotal.innerText = (articulosSeleccionados.precioTotal).toFixed(2);
+    etiquetaDelTotalCompra.innerText = articulosSeleccionados.precioTotal.toFixed(2);
+    etiquetaSpanDelPrecioDeLaCompra.innerText = (articulosSeleccionados.precioTotal).toFixed(2);
 
 
 
     
 }
 
-function decrementarProductos(primerID, idLabelCantidad) {
+function decrementarProductos(primerID) {
 
-    let htmlTotalPorArticulo = document.getElementById(primerID + "PrecioTotalXArticulo");
-    let htmlDelArticuloEnElCarro = document.getElementById("articuloCarro"+primerID);
-    let htmlDelArticuloEnElModal = document.getElementById("articuloEnElModal"+primerID)
-    let htmlDelTotalPrecioPorArticuloEnElModal = document.getElementById("totalPrecioArticuloModal"+primerID);
+    let etiquetaDelArticuloEnElModal = document.getElementById(primerID + "etiquetaDelArticuloEnElModal");
+    let EtiquetaEnElModalDelArticulo = document.getElementById(primerID + "ArticuloEnElModal")
+    let etiquetaDelTotalPorArticuloEnElModal = document.getElementById("totalPrecioArticuloModal"+primerID);
 
 
     if (Object.hasOwn(articulosSeleccionados, primerID)) {
 
         articulosSeleccionados[primerID]["cantidad"]--;
-        let labelDeCantidad = document.getElementById(idLabelCantidad);
-        labelDeCantidad.textContent = articulosSeleccionados[primerID]["cantidad"];
+        document.getElementById(primerID+"EtiquetaCantidad").textContent = articulosSeleccionados[primerID]["cantidad"];
         articulosSeleccionados["cantidadProductos"]--;
         articulosSeleccionados[primerID]["total"] = articulosSeleccionados[primerID]["cantidad"] * articulos[primerID].precio;
         articulosSeleccionados["precioTotal"] -= articulos[primerID].precio;
-        htmlTotalPorArticulo.textContent = articulosSeleccionados[primerID]["total"].toFixed(2);
-        htmlDelTotalPrecioPorArticuloEnElModal.textContent = articulosSeleccionados[primerID]["total"].toFixed(2);
-        htmlSpanPrecioTotal.innerText = articulosSeleccionados.precioTotal.toFixed(2);
+        document.getElementById(primerID + "etiquetaPrecioXArticuloEnElCarro").textContent = articulosSeleccionados[primerID]["total"].toFixed(2);
+        etiquetaDelTotalPorArticuloEnElModal.textContent = articulosSeleccionados[primerID]["total"].toFixed(2);
+        etiquetaSpanDelPrecioDeLaCompra.innerText = articulosSeleccionados.precioTotal.toFixed(2);
         document.getElementById("cantidadArticuloEnElCarrio"+primerID).innerText = articulosSeleccionados[primerID].cantidad;
         document.getElementById("cantidadDelArticuloEnElModal."+primerID).innerText = articulosSeleccionados[primerID].cantidad;
 
         if (articulosSeleccionados[primerID]["cantidad"] == 0) {
 
             delete articulosSeleccionados[primerID];
-            document.getElementById(primerID).parentNode.parentNode.childNodes[1].classList.remove("border", "border-danger", "border-3");
-            document.getElementById(primerID).classList.remove("visually-hidden");
-            document.getElementById(primerID).parentNode.childNodes[5].classList.add("visually-hidden");
-            htmlDelArticuloEnElCarro.parentNode.removeChild(htmlDelArticuloEnElCarro);
-            htmlDelArticuloEnElModal.parentNode.removeChild(htmlDelArticuloEnElModal);
+            document.getElementById(primerID+"Imagen").classList.remove("border", "border-danger", "border-3");
+            document.getElementById(primerID+"BotonAdicionar").classList.remove("d-none");
+            document.getElementById(primerID+"BotonDisminuirOAdicionar").classList.add("d-none");
+            etiquetaDelArticuloEnElModal.parentNode.removeChild(etiquetaDelArticuloEnElModal);
+            EtiquetaEnElModalDelArticulo.parentNode.removeChild(EtiquetaEnElModalDelArticulo);
             
             if (articulosSeleccionados.cantidadProductos == 0) {
                 
-                htmlNadaSeleccionado.classList.remove("visually-hidden");
-                htmlarticulosSeleccionados.classList.add("visually-hidden");
+                etiquetaCarroSinProductos.classList.remove("d-none");
+                etiquetaCarroConProductos.classList.add("d-none");
 
             }
 
         }
 
-        htmlCantidadProductosSeleccionados.textContent = articulosSeleccionados["cantidadProductos"];
-        htmlSpanPrecioTotal.textContent = articulosSeleccionados.precioTotal.toFixed(2);
-        htmlTotalPrecioModal.textContent = articulosSeleccionados.precioTotal.toFixed(2);
+        EtiquetaNumeroDeProductosComprados.textContent = articulosSeleccionados["cantidadProductos"];
+        etiquetaSpanDelPrecioDeLaCompra.textContent = articulosSeleccionados.precioTotal.toFixed(2);
+        etiquetaDelTotalCompra.textContent = articulosSeleccionados.precioTotal.toFixed(2);
 
     }
 
@@ -291,7 +286,8 @@ const articulos = {
     {
     precio: 6.50, 
     nombre: "Waffle with Berries",
-    urlThumbnail: "/aseets/image-waffle-thumbnail.jpg"
+    urlThumbnail: "/aseets/image-waffle-thumbnail.jpg",
+    urlTablet: "/aseets/image-waffle-tablet.jpg"
     },
     
     vanillaBeanCremeBrulee: 
