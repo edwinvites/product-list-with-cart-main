@@ -1,4 +1,4 @@
-@use "sass:map";
+
 // Custom.scss
 // Option B: Include parts of Bootstrap
 
@@ -7,17 +7,17 @@
 
 // 2. Include any default variable overrides here
 
-@font-face {
-  font-family: 'RedHat';
-  src: url('/aseets/fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype') ;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'RedHat';
-  src: url('/aseets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype') ;
-  font-style: normal;
-  font-weight: normal;
-}
+// @font-face {
+//   font-family: 'RedHat';
+//   src: url('/aseets/fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype') ;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'RedHat';
+//   src: url('/aseets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype') ;
+//   font-style: normal;
+//   font-weight: normal;
+// }
 
 $red: hsl(14, 86%, 42%);
 $green: hsl(159, 69%, 38%);
@@ -28,12 +28,25 @@ $Rose-400: hsl(7, 20%, 60%);
 $Rose-500: hsl(12, 20%, 44%);
 $Rose-900: hsl(14, 65%, 9%);
 
+
 $font-family-base: RedHat;
-$font-weight-bold: 990;
+// $font-weight-bold: 990;
 // $modal-dialog-margin: 0;
 $modal-content-border-width: 0px;
 $modal-content-border-radius: 0;
-$font-size-base: 0.8rem;
+// $modal-md: 100vw;
+$font-size-base:  0.4rem;
+
+$h1-font-size:                $font-size-base * 3;
+$h2-font-size:                $font-size-base * 2.75;
+$h3-font-size:                $font-size-base * 2.5;
+$h4-font-size:                $font-size-base * 2.25;
+$h5-font-size:                $font-size-base * 2.0;
+$h6-font-size:                $font-size-base * 1.75;
+$h7-font-size:                $font-size-base * 1.50;
+$h8-font-size:                $font-size-base * 1.25;
+$h9-font-size:                $font-size-base * 1.0;
+$h10-font-size:               $font-size-base ;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
@@ -59,14 +72,30 @@ $theme-colors: (
   "ocre" : hsl(30, 71%, 47%),
 );
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 400px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1440px
-);
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  7: $h7-font-size,
+  8: $h8-font-size,
+  9: $h9-font-size,
+  10: $h10-font-size
+    );
+
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 400px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1440px
+// );
+
+
 
 
 // 5. Include remainder of required parts
@@ -88,7 +117,10 @@ $grid-breakpoints: (
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/modal";
+
 @import "../node_modules/bootstrap/scss/utilities";
+
+
 
 $utilities: map-merge(
   $utilities, (
@@ -98,15 +130,32 @@ $utilities: map-merge(
     ),
   )
 );
+$utilities: map-merge(
+  $utilities, (
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
+      ( responsive: true ),
+    ),
+  )
+);
+$utilities: map-merge(
+  $utilities, (
+    "border-width": map-merge(
+      map-get($utilities, "border-width"),
+      ( responsive: true ),
+    ),
+  )
+);
+$utilities: map-merge(
+  $utilities, (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      ( responsive: true ),
+    ),
+  )
+);
 
-// $utilities: map-merge(
-//   $utilities, (
-//     "font-size": map-merge(
-//       map-get($utilities, "font-size"),
-//       ( responsive: true ),
-//     ),
-//   )
-// );
+
 
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
@@ -147,31 +196,91 @@ $utilities: map-merge(
 //   font-weight: bold;
 // }
 
-.modal-dialog-bottom {
-  display: flex;
-  align-items: end;
-  min-height: calc(100% - var(--bs-modal-margin) * 2);
+// .modal-dialog-ajuste {
+//   display: flex;
+//   align-items: end;
+//   min-height: calc(100% - var(--bs-modal-margin) * 2);
+// }
+
+// .modal-dialog-scrollable {
+//   height: 100vh;
+
+//   .modal-content {
+//     max-height: 88%;
+//     overflow: hidden;
+//   }
+
+//   .modal-body {
+//     overflow-y: auto;
+//   }
+// }
+
+.scala65 {
+  transform: scale(0.65);
 }
 
-.modal-dialog-scrollable {
-  height: 100vh;
-
-  .modal-content {
-    max-height: 90%;
-    overflow: hidden;
+@include media-breakpoint-down(md) {
+  .modal-dialog{
+    margin: 0;
   }
 
-  .modal-body {
-    overflow-y: auto;
+  .modal-dialog-scrollable .modal-content {
+    max-height: 85%;
   }
+
+  .modal-dialog-centered {
+    align-items: end;
+  }
+  .modal-dialog-scrollable{
+    height: 100%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  .display-1 {
+    font-size: calc(1.625rem + 1.0vw);
+  }
+
+  .scala65 {
+    transform: scale(0.65);
+  }
+
+
+  
+  //   .modal.show .modal-dialog {
+//     transform: none;
+//     left: 50%;
+//     transform: translateX(-50%);
+// }
+//   .modal-dialog-ajuste {
+//     align-items: center;
+//   }
+  
+  // .modal-dialog-scrollable {
+  //   height: 100vh;
+  
+  //   .modal-content {
+  //     max-height: 90%;
+  //     overflow: hidden;
+  //   }
+  
+  //   .modal-body {
+  //     overflow-y: auto;
+  //   }
+  // }
 }
 
 
-@include media-breakpoint-down(sm) {
-  .imagenes-para-telefonos {
-    display: none;
-  }
-}
 
 // @include media-breakpoint-only(md) { ... }
- 
+
+@font-face {
+  font-family: 'RedHat';
+  src: url('/aseets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/aseets/fonts/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
+}
