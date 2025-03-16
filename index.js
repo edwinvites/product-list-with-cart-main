@@ -61,8 +61,8 @@ function generadorEtiquetasParaElCarro(primerID) {
     const plantilla = `
         <div class="col-9 p-0">
             <div class="d-flex justify-content-evenly flex-column h-100">
-            <p class="m-0 fs-5 fw-bold fs-md-4 fs-lg-8">${articulos[primerID].nombre}</p>
-            <p class="m-0 fs-5 fs-md-4 fs-lg-8"><span class="text-danger fw-bolder" id="cantidadArticuloEnElCarrio${primerID}">${articulosSeleccionados[primerID].cantidad}</span><span class="text-danger fw-bolder">x</span> &nbsp; &nbsp;
+            <p class="m-0 fs-5 fw-bold fs-md-4 fs-lg-6">${articulos[primerID].nombre}</p>
+            <p class="m-0 fs-5 fs-md-4 fs-lg-6"><span class="text-danger fw-bolder" id="cantidadArticuloEnElCarrio${primerID}">${articulosSeleccionados[primerID].cantidad}</span><span class="text-danger fw-bolder">x</span> &nbsp; &nbsp;
                 <span class="text-Rose-400">@ $</span><span class="text-Rose-400">${articulos[primerID].precio.toFixed(2)}</span>
 
                 &nbsp;&nbsp;
