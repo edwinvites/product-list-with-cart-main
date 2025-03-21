@@ -146,14 +146,15 @@ $utilities: map-merge(
     ),
   )
 );
-$utilities: map-merge(
-  $utilities, (
-    "font-size": map-merge(
-      map-get($utilities, "font-size"),
-      ( responsive: true ),
-    ),
-  )
-);
+
+// $utilities: map-merge(
+//   $utilities, (
+//     "color": map-merge(
+//       map-get($utilities, "color"),
+//       ( state: hover ),
+//     ),
+//   )
+// );
 
 
 
@@ -238,13 +239,44 @@ $utilities: map-merge(
 
 @include media-breakpoint-up(md) {
 
+  svg:hover {
+
+    // circle:hover {
+    //   fill: white;
+    //   path {
+    //     fill: black;
+    //   }
+    // }
+
+circle{
+  fill: white;
+}
+
+path{
+  fill: $red;
+}
+
+
+  }
+
   .display-1 {
     font-size: calc(1.625rem + 1.0vw);
   }
 
-  .scala65 {
-    transform: scale(0.65);
-  }
+#waffleBotonAdicionar:hover,
+#vanillaBeanCremeBruleeBotonAdicionar:hover,
+#MacaronMixOfFiveBotonAdicionar:hover,
+#classicTiramisuBotonAdicionar:hover,
+#pistachioBaklavaBotonAdicionar:hover,
+#LemonMeringuePieBotonAdicionar:hover,
+#RedVelveCakeBotonAdicionar:hover,
+#SaltedCaramelBrownieBotonAdicionar:hover,
+#VanillaPannaCottaBotonAdicionar:hover
+{
+  border-color: $red !important;
+  color: $red;
+
+}
 
 
   

@@ -8588,11 +8588,26 @@ progress {
   }
 }
 @media (min-width: 768px) {
+  svg:hover circle {
+    fill: white;
+  }
+  svg:hover path {
+    fill: hsl(14, 86%, 42%);
+  }
   .display-1 {
     font-size: calc(1.625rem + 1vw);
   }
-  .scala65 {
-    transform: scale(0.65);
+  #waffleBotonAdicionar:hover,
+  #vanillaBeanCremeBruleeBotonAdicionar:hover,
+  #MacaronMixOfFiveBotonAdicionar:hover,
+  #classicTiramisuBotonAdicionar:hover,
+  #pistachioBaklavaBotonAdicionar:hover,
+  #LemonMeringuePieBotonAdicionar:hover,
+  #RedVelveCakeBotonAdicionar:hover,
+  #SaltedCaramelBrownieBotonAdicionar:hover,
+  #VanillaPannaCottaBotonAdicionar:hover {
+    border-color: hsl(14, 86%, 42%) !important;
+    color: hsl(14, 86%, 42%);
   }
 }
 @font-face {
