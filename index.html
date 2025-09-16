@@ -1,583 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="/custom.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="aseets/icons8-cubiertos-48.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="/custom.css" rel="stylesheet" />
 
     <title>Desserts</title>
-</head>
+  </head>
 
-<body class="bg-Rose-100  px-4 px-md-5 ">
-    <div class="container ">
-        <div class="row row-cols-1 row-cols-lg-2 ">
+  <body class="bg-Rose-100 px-4 px-md-5">
+    <main class="container">
+      <div class="row">
+        <h1 class="py-4 py-md-5 pb-lg-1 display-1 fw-bold m-0">Desserts</h1>
 
-            <div class="col col-lg-8 px-0">
-                <div class="container w-100">
-                    <div class="row row-cols-1 ">
-                        <div class="col px-0">
-                            <h1 class="py-4 py-md-5 pb-lg-1 display-1 
-                             fw-bold m-0">Desserts</h1>
-                        </div>
-                        <div class="col px-0">
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////// Productos ////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 -->
 
-                            <div class="container px-0">
-                                <div class="row row-cols-1 row-cols-lg-3">
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden " id="waffleImagen">
-                                            <img src="/aseets/image-waffle-mobile.jpg" alt="" class="w-100 d-lg-none  ">
-                                            <img src="/aseets/image-waffle-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-        
-        <!-- //////////////////////////////////////////////// adicionar producto ////////////////////////////////////////////////////// -->
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2   "
-                                                id="waffleBotonAdicionar"
-                                                onclick="botonesAdicionar('waffle')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2 ">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4  fs-lg-5 fw-bold text-nowrap pe-none ">Add to Car</p>
-                                            </div>
-        
-        <!--//////////////////////// contabilizador del producto /////////////////////////////////-->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  d-flex justify-content-between align-items-center d-none"
-                                                id="waffleBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('waffle')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="waffleEtiquetaCantidad">1</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center "
-                                                    onclick="incrementarCantidades('waffle')">
-
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-                                                    <!-- <div class="border border-1 rounded-circle p-1 bg-info ">
-
-
-                                                    </div> -->
-                                                </div>
-                                            </div>
-        
-        <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
-        
-                                        </div>
-        
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400 ">Wafle</p>
-                                        <p class="m-0 fw-bolder fs-4  fs-lg-3 fs-md-2 text-Rose-900">Wafle with Barries</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$6.50</p>
-                                    </div>
-        
-                                    <!-- //////////////////////////////////////////////////// creme-brule /////////////////////////////// -->
-        
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="vanillaBeanCremeBruleeImagen">
-                                            <img src="/aseets/image-creme-brulee-mobile.jpg" alt="" class="w-100  d-lg-none">
-
-                                                <img src="/aseets/image-creme-brulee-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2  "
-                                                id="vanillaBeanCremeBruleeBotonAdicionar"
-                                                onclick="botonesAdicionar('vanillaBeanCremeBrulee')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2 ">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4  fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!--/////////////////  contabilizador del producto //////////////////77-->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   d-flex justify-content-between align-items-center  d-none"
-                                                id="vanillaBeanCremeBruleeBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('vanillaBeanCremeBrulee')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-                                                </div>
-                                                <p class="  px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="vanillaBeanCremeBruleeEtiquetaCantidad">5</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('vanillaBeanCremeBrulee')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- //////////////////////////////////////////////////////////////7 -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400 ">Crème Brûlée</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Vanilla Bean Crème Brûlée </p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$7.00</p>
-                                    </div>
-        
-        
-                                    <!-- //////////////////////////////////////////////// macaron /////////////////////////////////////////////////////////////////////////////// -->
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="MacaronMixOfFiveImagen">
-                                            <img src="/aseets/image-macaron-mobile.jpg" alt="" class="w-100   d-lg-none">
-
-                                                <img src="/aseets/image-macaron-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2  "
-                                                id="MacaronMixOfFiveBotonAdicionar"
-                                                onclick="botonesAdicionar('MacaronMixOfFive')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!-- ///////////////////////////////////// contabilizador del producto ////////////////////////////////////////////7 -->
-                                                            
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  d-flex justify-content-between align-items-center  d-none"
-                                                id="MacaronMixOfFiveBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('MacaronMixOfFive')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="MacaronMixOfFiveEtiquetaCantidad">5</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('MacaronMixOfFive')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Macaron</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Macaron Mix of Five</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$8.00</p>
-                                    </div>
-        
-        
-                                    <!-- ///////////////////////////////////////////////////////////////// Tiramisu //////////////////////////////////////////////// -->
-        
-                                    <div class=" col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="classicTiramisuImagen">
-                                            <img src="/aseets/image-tiramisu-mobile.jpg" alt="" class="w-100   d-lg-none">
-
-                                                <img src="/aseets/image-tiramisu-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 "
-                                                id="classicTiramisuBotonAdicionar"
-                                                onclick="botonesAdicionar('classicTiramisu')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!-- //////////////////////////////////////////////////7 contabilizador del producto //////////////////////////////////////////////77 -->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill   d-flex justify-content-between align-items-center  d-none"
-                                                id="classicTiramisuBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('classicTiramisu')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="classicTiramisuEtiquetaCantidad">5</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('classicTiramisu')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Tiramisu</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Classic Tiramisu</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-6  mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$5.50</p>
-                                    </div>
-        
-                                    <!-- ///////////////////////////////////////////////////////// pistachioBaklava ////////////////////////////////////////////////// -->
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="pistachioBaklavaImagen">
-                                            <img src="/aseets/image-baklava-mobile.jpg" alt="" class="w-100   d-lg-none">
-
-                                                <img src="/aseets/image-baklava-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 "
-                                                id="pistachioBaklavaBotonAdicionar"
-                                                onclick="botonesAdicionar('pistachioBaklava')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////////// contabilizador del producto //////////////////////////////////////////////// -->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill d-flex justify-content-between align-items-center  d-none"
-                                                id="pistachioBaklavaBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('pistachioBaklava')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-        
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="pistachioBaklavaEtiquetaCantidad">5</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('pistachioBaklava')">
-        
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Baklava</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Pistachio Baklava</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$4.00</p>
-                                    </div>
-        
-        
-                                    <!-- //////////////////////////////////////////////  LemonMeringuePie  ///////////////////////////////////////////// -->
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="LemonMeringuePieImagen">
-                                            <img src="/aseets/image-meringue-mobile.jpg" alt="" class="w-100   d-lg-none">
-
-                                                <img src="/aseets/image-meringue-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2  "
-                                                id="LemonMeringuePieBotonAdicionar"
-                                                onclick="botonesAdicionar('LemonMeringuePie')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!-- ////////////////////////////////////// contabilizador del producto //////////////////////////////// -->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  d-flex justify-content-between align-items-center  d-none"
-                                                id="LemonMeringuePieBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('LemonMeringuePie')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-        
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="LemonMeringuePieEtiquetaCantidad">5</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('LemonMeringuePie')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////////////////////////////////////////////////////77 -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Pie</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Lemon Meringue Pie</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$5.00</p>
-                                    </div>
-        
-                                    <!-- ////////////////////////////////////////////////////////////////  RedVelveCake //////////////////////////////////////////////////7 -->
-        
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="RedVelveCakeImagen">
-                                            <img src="/aseets/image-cake-mobile.jpg" alt="" class="w-100  d-lg-none">
-
-                                                <img src="/aseets/image-cake-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 "
-                                                id="RedVelveCakeBotonAdicionar" onclick="botonesAdicionar('RedVelveCake')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!--  ///////////////////////////////////////77 contabilizador del producto //////////////////////////////////////////////////////// -->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  d-flex justify-content-between align-items-center  d-none"
-                                                id="RedVelveCakeBotonDisminuirOAdicionar">
-        
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('RedVelveCake')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-        
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="RedVelveCakeEtiquetaCantidad">5</p>
-        
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('RedVelveCake')">
-        
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Cake</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Red Velvet Cake</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$4.50</p>
-                                    </div>
-        
-                                    <!-- //////////////////////////////////////////////////// SaltedCaramelBrownie  ///////////////////////////////////////////////////////7 -->
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="SaltedCaramelBrownieImagen">
-                                            <img src="/aseets/image-brownie-mobile.jpg" alt="" class="w-100  d-lg-none">
-
-                                                <img src="/aseets/image-brownie-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 "
-                                                id="SaltedCaramelBrownieBotonAdicionar"
-                                                onclick="botonesAdicionar('SaltedCaramelBrownie','contabilizadorBrownie')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none">Add to Car</p>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////////////7 contabilizador del producto ////////////////////////////////////////////////// -->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill d-flex justify-content-between align-items-center  d-none"
-                                                id="SaltedCaramelBrownieBotonDisminuirOAdicionar">
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('SaltedCaramelBrownie')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-        
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="SaltedCaramelBrownieEtiquetaCantidad">5</p>
-        
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    onclick="incrementarCantidades('SaltedCaramelBrownie')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77 -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Brownie</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Salted Caramel Brownie</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$5.50</p>
-                                    </div>
-        
-                                    <!-- ////////////////////////////////////////////////////////  VanillaPannaCotta  ///////////////////////////////////////////////////////////// -->
-        
-                                    <div class="col pt-2">
-                                        <div class="rounded-2 rounded-md-4 rounded-lg-2 overflow-hidden" id="VanillaPannaCottaImagen">
-                                            <img src="/aseets/image-panna-cotta-mobile.jpg" alt="" class="w-100  d-lg-none">
-
-                                                <img src="/aseets/image-panna-cotta-desktop.jpg" alt=""
-                                                class="w-100  d-none d-lg-block ">
-                                        </div>
-                                        <div class="bg-Rose-50 position-relative mb-3">
-                                            <div class="position-absolute start-50 translate-middle bg-Rose-50 border rounded-pill  border-Rose-900 d-flex justify-content-between align-items-center px-4 py-2 border-ocre-hover"
-                                                id="VanillaPannaCottaBotonAdicionar"
-                                                onclick="botonesAdicionar('VanillaPannaCotta')">
-                                                <img src="/aseets/icon-add-to-cart.svg" alt="" class="d-inline  pe-2">
-                                                <p class="d-inline ps-2 m-0 fs-6 fs-md-4 fs-lg-5 fw-bold text-nowrap pe-none ">Add to Car</p>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////// contabilizador del producto ////////////////////////////////////////////////////77 -->
-        
-                                            <div class="position-absolute start-50 translate-middle bg-danger border-0 rounded-pill  d-flex justify-content-between align-items-center  d-none"
-                                                id="VanillaPannaCottaBotonDisminuirOAdicionar">
-        
-                                                <div class="py-2 ps-2 pe-5 py-md-4 ps-md-4 pe-md-5 py-lg-2 ps-lg-2 pe-lg-3 d-flex justify-content-center"
-                                                    onclick="decrementarProductos('VanillaPannaCotta')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 2">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" transform-origin="50%" transform="scale(0.5)" />
-                                                    </svg>
-        
-                                                </div>
-                                                <p class=" px-1 py-0 m-0  text-center fs-5 fs-md-2 fs-lg-6 text-white"
-                                                    id="VanillaPannaCottaEtiquetaCantidad">5</p>
-                                                <div class="py-2 ps-5 pe-2 py-md-4 pe-md-4 ps-md-5 py-lg-2 ps-lg-3 pe-lg-2  d-flex justify-content-center"
-                                                    class="" onclick="incrementarCantidades('VanillaPannaCotta')">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 10 10" transform="">
-                                                        <circle cx="50%" cy="50%" r="4" fill=""  stroke="white" stroke-width="0.5" />
-                                                        <path fill="#FFFFFF" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" transform="scale(0.5)" transform-origin="50%"/>
-                                                    </svg>
-        
-                                                </div>
-                                            </div>
-        
-                                            <!-- /////////////////////////////////////////////777/////////////////////////////////////////////////////////////////////// -->
-                                        </div>
-                                        <p class="pt-3 mb-0  mt-md-2 fs-5 fs-md-3 fs-lg-5 text-Rose-400">Panna</p>
-                                        <p class="m-0 fw-bolder fs-4 fs-md-2 fs-lg-3 text-Rose-900">Vanilla Panna Cotta</p>
-                                        <p class="fw-bold fs-4 fs-md-2 fs-lg-3 mx-0 my-0 mb-md-3 pb-4 pb-md-5 text-ocre">$6.50</p>
-                                    </div>
-        
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-4 px-0 px-lg-3 ">
-
-
-                <!-- ////////////////////////////////////////////////// car ////////////////////////////////////////////////////////7 -->
-
-
-
-
-                <div class="mt-4 bg-Rose-50 rounded mb-3 px-4 mb-md-5 mt-lg-5">
-                    <p class="fs-1 fw-bolder fs-md-2 fs-lg-1  mb-1 pt-4 pt-lg-2 text-danger">Your Cart (<span class="fs-2 fs-md-4 fs-lg-1"
-                            id="cantidadDeProductosSeleccionados">0</span>)</p>
-                    <div class="d-flex flex-column justify-content-center pb-4 mt-2 d-none" id="carritoConProductos">
-                        <div class="container" id="artiuculosModal">
-
-                            <div class="row  py-3 py-lg-1 mt-3 mt-lg-1" id="precioTotal">
-                                <div class="col-9 m-0 p-0 align-self-center">
-                                    <p class="  fs-5 fs-md-4 fs-lg-5 m-0">Order Total</p>
-                                </div>
-                                <div class="col-3 align-self-center p-0 m-0">
-                                    <div class="d-flex justify-content-end ">
-                                        <p class="m-0 fs-1 fs-md-2 fs-lg-1 fw-bolder">$<span
-                                                id="spanPrecioDeLaCompra">25.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row  py-3 py-lg-2 mt-3 mb-4 bg-Rose-100 rounded">
-                                <div class="col">
-                                    <div class="d-flex justify-content-center">
-                                        <img src="/aseets/icon-carbon-neutral.svg" alt="" class="d-inline px-1">
-                                        <p class="m-0 fs-6 fs-md-4 fs-lg-7 d-inline px-1">This is <span
-                                                class="fw-bolder">carbon-neutral</span>
-                                            delivery</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3 px-0">
-                                <div class="col-12 p-0 ">
-                                    <button type="button" class="btn btn-danger rounded-pill py-3 py-lg-2 w-100 fs-4 fs-md-3 fs-lg-6 "
-                                        id="botonDelModal" data-bs-toggle="modal" data-bs-target="#modalArticulos" onclick="">
-                                        Confirm Order
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column justify-content-center py-4" id="carritoSinProductos">
-                        <img src="/aseets/illustration-empty-cart.svg" alt="" class="w-25 rounded mx-auto"
-                            id="imagenDelPastelCortado">
-                        <p class="pt-4  fs-6 fs-md-2 fs-lg-6 text-center text-Rose-500 fw-bolder">Your added items will appear
-                            here</p>
-                    </div>
-                </div>
-            </div>
+        <div class="col col-lg-8 px-0">
+          <div class="row row-cols-1 row-cols-lg-3" id="fila_productos"></div>
         </div>
+        <div class="col col-lg-4 px-0 px-lg-3">
+          <div class="mt-4 bg-Rose-50 rounded mb-3 px-4 mb-md-5 mt-lg-5 sticky-top">
+            <p
+              class="fs-1 fw-bolder fs-md-2 fs-lg-1 mb-1 pt-4 pt-lg-2 text-danger"
+            >
+              Your Cart (<span
+                class="fs-2 fs-md-4 fs-lg-1"
+                id="cantidad_productos"
+                >0</span
+              >)
+            </p>
+            <div
+              class="d-flex flex-column justify-content-center pb-4 mt-2 d-none"
+              id="carritoConProductos"
+            >
+              <div class="container " id="container_for_products_in_car">
+                <div class="row py-3 py-lg-1 mt-3 mt-lg-1" id="cost_total">
+                  <div class="col-9 m-0 p-0 align-self-center" >
+                    <p class="fs-5 fs-md-4 fs-lg-5 m-0">Order Total</p>
+                  </div>
+                  <div class="col-3 align-self-center p-0 m-0">
+                    <div class="d-flex justify-content-end">
+                      <p class="m-0 fs-1 fs-md-2 fs-lg-1 fw-bolder">
+                        $<span id="spanPrecioDeLaCompra">25.00</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3 py-lg-2 mt-3 mb-4 bg-Rose-100 rounded">
+                  <div class="col">
+                    <div class="d-flex justify-content-center">
+                      <img
+                        src="/aseets/icon-carbon-neutral.svg"
+                        alt=""
+                        class="d-inline px-1"
+                      />
+                      <p class="m-0 fs-6 fs-md-4 fs-lg-7 d-inline px-1">
+                        This is
+                        <span class="fw-bolder">carbon-neutral</span> delivery
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3 px-0">
+                  <div class="col-12 p-0">
+                    <button
+                      type="button"
+                      class="btn btn-danger rounded-pill py-3 py-lg-2 w-100 fs-4 fs-md-3 fs-lg-6"
+                      id="botonDelModal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalArticulos"
+                      onclick=""
+                    >
+                      Confirm Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column justify-content-center py-4"
+              id="carritoSinProductos"
+            >
+              <img
+                src="/aseets/illustration-empty-cart.svg"
+                alt=""
+                class="w-25 rounded mx-auto"
+                id="imagenDelPastelCortado"
+              />
+              <p
+                class="pt-4 fs-6 fs-md-2 fs-lg-6 text-center text-Rose-500 fw-bolder"
+              >
+                Your added items will appear here
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 -->
+      </div>
+    </main>
 
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    ///////////////////////////////////////////////// modal /////////////////////////////////////////////////7 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////7  -->
 
-
-
-
-
+    <div
+      class="modal fade"
+      id="modalArticulos"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-Rose-50 rounded-top-4 rounded-md-2">
+          <div
+            class="modal-header flex-column align-items-start pt-5 px-4 px-md-6"
+          >
+            <img
+              src="./aseets/icon-order-confirmed.svg"
+              alt=""
+              class="d-block"
+            />
+            <h1
+              class="modal-title fw-bolder display-1 d-block pt-3 text-wrap"
+              id="exampleModalLabel"
+            >
+              Order Confirmed
+            </h1>
+            <p class="fs-4 text-Rose-500">We hope you enjoy your food!</p>
+          </div>
+          <div
+            class="modal-body bg-Rose-100 border-1 border-white mx-4 px-0 py-0 mt-0 rounded"
+          >
+            <div class="container px-4 w-100 pt-2" id="box_for_products_and_cost_modal">
+              <div
+                class="row w-100 m-0 pt-3 pb-3"
+               id="total_cost_in_modal"
+              >
+                <div class="col-12" >
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <p class="m-0 fs-6 fs-md-2 fs-lg-6">Order Total</p>
+                    <p class="fs-1 fw-bolder m-0 fs-md-2">
+                      $<span id="total_cost_element_in_modal"> 5.50</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-Rose-50 border-0 px-4 mt-3">
+            <button
+              type="button"
+              class="btn btn-danger rounded-pill w-100 text-white py-3 py-lg-2 fs-4"
+              onclick="reset()"
+            >
+              Star New Order
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////7  -->
 
-
-        <!-- ///////////////////////////////////////////////// modal /////////////////////////////////////////////////7  -->
-        <!-- Button trigger modal -->
-
-        <div class="modal fade " id="modalArticulos" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable    ">
-                <div class="modal-content bg-Rose-50 rounded-top-4 rounded-md-2">
-                    <div class="modal-header flex-column align-items-start  pt-5 px-4 px-md-6">
-                        <img src="./aseets/icon-order-confirmed.svg" alt="" class="d-block ">
-                        <h1 class="modal-title fw-bolder display-1  d-block pt-3 text-wrap" id="exampleModalLabel">Order
-                            Confirmed</h1>
-                        <p class="fs-4  text-Rose-500">We hope you enjoy your food!</p>
-                    </div>
-                    <div class="modal-body bg-Rose-100 border-1 border-white mx-4 px-0 py-0 mt-0 rounded">
-
-                        <div class="container px-4 w-100 pt-2" id="articulosConfirmados">
-
-                            <div class="row w-100 m-0 pt-3 pb-3" id="etiquetaConTotalDelaCompra">
-                                <div class="col-12">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="m-0 fs-6 fs-md-2 fs-lg-6">Order Total</p>
-                                        <p class=" fs-1 fw-bolder m-0 fs-md-2">$<span id="totalCompraModal"> 5.50</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-                    </div>
-                    <div class="modal-footer bg-Rose-50 border-0 px-4 mt-3">
-                        <button type="button" class="btn btn-danger rounded-pill w-100 text-white  py-3 py-lg-2 fs-4" onclick="reset()">Star New Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <!-- <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="/index.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -220,6 +220,10 @@ $utilities: map-merge(
   transform: scale(0.65);
 }
 
+* {
+  scrollbar-width: none;
+}
+
 @include media-breakpoint-down(md) {
   .modal-dialog{
     margin: 0;

@@ -8573,6 +8573,10 @@ progress {
   transform: scale(0.65);
 }
 
+* {
+  scrollbar-width: none;
+}
+
 @media (max-width: 767.98px) {
   .modal-dialog {
     margin: 0;
